@@ -11,7 +11,6 @@ class Solution:
                     continue
                 else:
                     if(intervals[i][0] >= array_sub[0] and intervals[i][1] <= array_sub[1]):
-                        print(intervals[i], array_sub)
                         intervals.pop(i)
                         count -= 1
                         i -= 1
