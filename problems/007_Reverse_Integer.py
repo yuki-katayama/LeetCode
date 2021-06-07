@@ -1,26 +1,13 @@
-from typing import List
-
 class Solution:
     def reverse(self, x: int) -> int:
         x = str(x)
-        result = []
-        sign = 0
-        for c in x:
-            if c == '-':
-                sign -= 1
-                continue
-            elif c == '+':
-                sign += 1
-                continue
-            result.insert(0, c)
-        if sign == -1:
-            result.insert(0, '-')
+        if x[0] == '-':
+            x = int('-' + ''.join(x[:0:-1]))
         else:
-            result.insert(0, '+')
-        result = int(''.join(result))
-        if ((result > 2147483647) or (result < -2147483648)):
-            result = 0
-        return result
+            x = int(x[::-1])
+        if ((x > 2147483647) or (x < -2147483648)):
+            x = 0
+        return x
 
 solution = Solution()
-print(solution.reverse(123))
+print(solution.reverse(-123))
